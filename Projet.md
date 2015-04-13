@@ -1,24 +1,25 @@
 # Only-Way-Out
-Voila un début de code pour le projet. Cette partie servirait à charger une image. Il y a deux lignes dont je ne comprend pas l'utilité mais elles étaient indiquées dans les tutos donc bon.
+Voila un début de code pour le projet. Cette partie servirait à charger une image.
 
 " " " " " " " " " " " " " " " " " " " " " " " " " " " " " " " " " " " " " " " " " " " " " " " " " " " " " " " " " " " " "
+
 import pygame
 import sys
 import math
 import random
 from pygame.locals import *
+tourelle = pygame.image.load ('tank.jpg')
+herbe = pygame.image.load ('herbe.jpg')
 
-def chargement_image(nom):
+def affichage_fenetre():
     """
-    Fonction qui charge une image et qui retourne un objet image
+    Fonction qui affiche une fenêtre avec une image de fond.
     """
-    try:
-        image = pygame.image.load(nom)
-        if image.get_alpha() is None:         ######
-            image = image.convert()
-        else:
-            image = image.convert_alpha()     ######
-    except:
-        print("Impossible de charger l'image :", nom)
-        raise SystemExit
-    return image, image.get_rect()
+    pygame.init()
+    screen = pygame.display.set_mode((1000, 800))
+    pygame.display.set_caption(("Notre projet"))
+    background = herbe
+    screen.blit(background, (500, 200))
+    screen.blit(tourelle, (500, 400))
+    pygame.display.update()
+affichage_fenetre()
