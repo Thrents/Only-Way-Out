@@ -1,0 +1,16 @@
+Faire une variable temps qui évolue au fur et à mesure du jeu, qui permettra de faire un score à la fin 
+( " vous avez tenu X secondes ! " ) mais aussi de gerer les cadences de tir ! 
+Par exemple : faire une verification pour les tourelles du genre : 
+if temps % 2 == 0
+  fonction_tir_tourelles()
+  
+  En gros si le temps est un multiple de 2 secondes => tirer, en gros un tir toutes les 2 sec.
+  
+  à approfondir mais si je ne l'avais pas écrit je l'aurais oublié.
+  
+  Aussi j'y ai réfléchi, les 5000 tourelles risquent de poser pobleme si elles tirent toutes en même temps 
+  sans limite de porté ... Il faut penser à quelque chose pour ça. ( j'ai pensé à metre un compteur aux projectiles
+  , comteur qui se réduit quand le jeu se met à jour toutes les 0.X secondes. )
+  
+  Et pour finir, pour les colisions ou peut créer une liste comportan toutes les coordonnées interdites,
+  et si le vehicule va sur ces cordonnées ( murs, tanks, eau ) le jeu est terminé. De même pour les projectiles.
