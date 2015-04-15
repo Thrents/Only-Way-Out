@@ -1,68 +1,68 @@
 #Only Way Out
-
-Suite à une erreur de ma part, l'autre a été perdu. Voici au moins le peu qu'il y avait dessus à ce moment la :
 http://fr.wikibooks.org/wiki/Pygame/Importation_et_initialisation
 http://fr.wikibooks.org/wiki/Pygame/D%C3%A9placer_une_image
 
-Quelques premiers jets, rien de serieux c'était plus pour voir comment ça pouvait rendre.
+Apperçus en grand des textures utilisés, A NE PAS PRENDRE DANS LE PROGRAMME.
 http://image.noelshack.com/fichiers/2015/13/1427144029-test-weed-2-grand.jpg
 http://image.noelshack.com/fichiers/2015/13/1427144025-test-water-grand.jpg
 http://image.noelshack.com/fichiers/2015/13/1427144025-test-mud-grand.jpg
 
-Jvais voir pour une texture plus ... naturelle. En attendant j'ai beaucoup aimé les enchainements de ces blocs, qui font 
-penser à pokemon pour le coup ( par exemple : http://image.noelshack.com/fichiers/2015/13/1427144178-test-water.jpg )
+Gifs créés, mais non utilisés :
+Boule : http://gickr.com/results3/anim_f5e88ac9-238b-1664-4555-9f0ce2616386.gif
+Droite => http://gickr.com/results3/anim_389d70d0-e4d5-a544-950a-3c72cf835b67.gif
+Droite en petit => http://gickr.com/results3/anim_f1366334-558f-5334-59b2-2545b106fe1c.gif
 
-Debut de mur, mal fait mais toujours plus utile que l'autre : 
-http://image.noelshack.com/fichiers/2015/13/1427146233-mur-avec-rebord-possible.jpg
-http://image.noelshack.com/fichiers/2015/13/1427146233-mur.jpg
-http://image.noelshack.com/fichiers/2015/13/1427146239-mur-avec-rebord-possible-test-12.jpg
+Le défilé millitaire  ( en fait un premier jet pour voir ce que rendait les tanks sur le terrain, ainsi que
+les textures ): http://image.noelshack.com/fichiers/2015/16/1429114493-test-carte-jpeg.jpg
 
-Peut être utilisé comme etage, mur, plateforme ect, et bien sur, peut être amélioré.
+Textures :
 
-Prototype pour la boule à bouger : 
-http://gickr.com/results3/anim_f5e88ac9-238b-1664-4555-9f0ce2616386.gif
+- Tourelles : 
+Tank => http://image.noelshack.com/fichiers/2015/13/1427227233-tank.jpg
 
+ Render tank ( sans contours )=> http://image.noelshack.com/fichiers/2015/16/1428920930-tank.png
+ 
+Bunker => http://image.noelshack.com/fichiers/2015/16/1429114492-test-bunker2-sombre.png
 
-Ps : Pour toutes les images telecharge les, sinon t'auras du mal à les voir =x
+Bunker transparent =>http://image.noelshack.com/fichiers/2015/16/1429114492-test-bunker2.png
 
+Projectiles avec leurs vehicules :
 
-Bon après concertation on ne garde que "herbe projet" ^^ je laisse le lien au cas ou on la perde
-http://image.noelshack.com/fichiers/2015/13/1427295811-herbe-projet.jpg
-
-Images de tourelles:
-http://image.noelshack.com/fichiers/2015/13/1427227233-tank.jpg
-http://image.noelshack.com/fichiers/2015/13/1427298204-test-tourelle.jpg
-
-Tank sans contours (normalement )
-http://image.noelshack.com/fichiers/2015/16/1428920930-tank.png
-
-autre gif fait vite fait :
-http://gickr.com/results3/anim_f1366334-558f-5334-59b2-2545b106fe1c.gif
-exemple de route, avec 
-http://gickr.com/results3/anim_389d70d0-e4d5-a544-950a-3c72cf835b67.gif
-en grand =)
-
-
-EDIT :
 projectiles tanks, choisis ton préféré je te le mettrais à part.
 http://image.noelshack.com/fichiers/2015/16/1429114492-projectiles-2.png
 
 projectiles bunker , de même
 http://image.noelshack.com/fichiers/2015/16/1429114492-projectiles.png
 
-Bunker, que je peux améliorer sans probleme.
-http://image.noelshack.com/fichiers/2015/16/1429114492-test-bunker2.png
-Le même mais moins transparent, j'utilise plus celui ci: 
-http://image.noelshack.com/fichiers/2015/16/1429114492-test-bunker2-sombre.png
 
-Le défilé millitaire  ( en fait un premier jet pour voir ce que rendait les tanks sur le terrain, ainsi que les textures ):
-http://image.noelshack.com/fichiers/2015/16/1429114493-test-carte-jpeg.jpg
-
-Premier jet de carte, avec tourelles / bunkers :
-http://image.noelshack.com/fichiers/2015/16/1429114493-test-map-jpg.jpg
-
-Vehicule :
+- Vehicule :
 http://image.noelshack.com/fichiers/2015/16/1429114492-test-vehicule-jpg.jpg
+
+- EAU :
+http://image.noelshack.com/fichiers/2015/13/1427144178-test-water.jpg 
+
+- Herbe : 
+Non utilisé => http://image.noelshack.com/fichiers/2015/13/1427295811-herbe-projet.jpg
+utilisé  => http://image.noelshack.com/fichiers/2015/16/1429115556-weed-sample-jpg.jpg
+
+- Terre
+utilisé => http://image.noelshack.com/fichiers/2015/16/1429115556-test-mud.jpg
+
+- Route 
+Route de terre => http://image.noelshack.com/fichiers/2015/16/1429115556-route-terre-long.jpg
+
+Murs :
+Mur de base ( petit carré que j'utilise ) => http://image.noelshack.com/fichiers/2015/13/1427146233-mur.jpg
+Mur avec rebord => http://image.noelshack.com/fichiers/2015/13/1427146239-mur-avec-rebord-possible-test-12.jpg
+Mur rouge => http://image.noelshack.com/fichiers/2015/16/1429115556-mur-test.jpg
+
+
+
+Premier jet de carte, avec tourelles / bunkers : http://image.noelshack.com/fichiers/2015/16/1429114493-test-map-jpg.jpg
+Autre test, amélioré et agrandit : http://image.noelshack.com/fichiers/2015/16/1429114998-test-map-suite.png
+Suite, encore plus grand : http://image.noelshack.com/fichiers/2015/16/1429116116-test-map-suite-mais-vide-jpg.jpg
+
+
 
 
 
