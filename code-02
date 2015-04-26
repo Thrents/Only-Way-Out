@@ -1,0 +1,55 @@
+import pygame
+import sys
+import math
+import random
+from pygame.locals import *
+background = pygame.image.load('image jeux.png')
+jeep = pygame.image.load('jeep.png')
+jeep_position = (500, 400)
+
+
+def affichage_fenetre():
+    """
+    Fonction qui affiche une fenêtre avec une image de fond.
+    """
+    pygame.init()
+    screen = pygame.display.set_mode((1000, 800))
+    pygame.display.set_caption(("Notre projet"))
+    pygame.blit(background(0 ,0))
+    pygame.blit(jeep(jeep_position))
+    pygame.display.update()
+
+affichage_fenetre()
+
+
+def moveup():
+    jeep_position += 0, 10
+
+
+def movedown():
+    jeep_position -= 0, 10
+
+
+def moveleft():
+    jeep_position -= 10, 0
+
+
+def moveright():
+    jeep_position += 10, 0
+
+
+def mouvement():
+    """
+    Fonction qui gère les déplacements du personnage.
+    """
+    for event in pygame.event.get():
+        if event.type == KEYDOWN:
+            if event.key == K_UP:
+                moveup()
+            if event.key == K_DOWN:
+                movedown()
+            if event.key == K_RIGHT:
+                moveright()
+            if event.key == K_LEFT:
+                moveleft()
+
