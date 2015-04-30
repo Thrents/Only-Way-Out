@@ -71,6 +71,9 @@ def tir_bas():
     """
     while True:
         temps = pygame.time.get_ticks()
+        if temps % 2000 == 0:
+            pygame.image.load(obus_1(obus_1_position))
         if temps % 500 == 0:
             obus_1_position = obus_1_position.move(0, -30)
+        
 
