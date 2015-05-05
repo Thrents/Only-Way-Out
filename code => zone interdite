@@ -13,11 +13,20 @@ continuer = 0
   
   Le code complet pour les vérifications :
   
-if jeep_position[0] == 1 or jeep_position[0] == 2 or jeep_position[0] == 3 or jeep_position[0] == 4
+if jeep_position[0] == 1 or jeep_position[0] == 2 or jeep_position[0] == 3 or jeep_position[0] == 4:
   * action choisie *
-elif jeep_position[1] == 7 or jeep_position[1] == 8 or jeep_position[1] == 9 or jeep_position[1] == 10
+elif jeep_position[1] == 7 or jeep_position[1] == 8 or jeep_position[1] == 9 or jeep_position[1] == 10:
   * action choisie *
-elif jeep_position[0] == 1097 or jeep_position[0] == 1098 or jeep_position[0] == 1099 or jeep_position[0] == 1100
+elif jeep_position[0] == 1097 or jeep_position[0] == 1098 or jeep_position[0] == 1099 or jeep_position[0] == 1100:
   * action choisie *
-elif jeep_position[1] == 717 or jeep_position[1] == 718 or jeep_position[1] == 719 or jeep_position[1] == 720
+elif jeep_position[1] == 717 or jeep_position[1] == 718 or jeep_position[1] == 719 or jeep_position[1] == 720:
   * action choisie *
+  
+  Le code pour finir le jeu est le suivant : 
+  if jeep_position[0] == 1050 or jeep_position[0] == 1051 or jeep_position[0] == 1052 or jeep_position[0] == 1053 or jeep_position[0] == 1054 or jeep_position[0] == 1055 or jeep_position[0] == 1056 or jeep_position[0] == 1057 or jeep_position[0] == 1058 or jeep_position[0] == 1059or jeep_position[0] == 1060:
+    if jeep_position[1] == 40 or jeep_position[1] == 41 or jeep_position[1] == 42 or jeep_position[1] == 43 or jeep_position[1] == 4 or jeep_position[1] == 45 or jeep_position[1] == 46 or jeep_position[1] == 47 or jeep_position[1] == 48 or jeep_position[1] == 49 or jeep_position[1] == 50
+      * lancer la fonction de victoire du jeu *
+      
+      Ce code un peu compliqué ( fin nan, c'est juste des répétitions ) permet d'avoir un petit cercle de 10x10
+      comme zone de fin et non 1px, car c'est dur de tomber sur le bon =x
+  
