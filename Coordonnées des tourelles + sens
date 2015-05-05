@@ -1,5 +1,21 @@
 Voici les coordonnées de TOUTES les tourelles de la map n°8 ( 960 x720 px )
 http://image.noelshack.com/fichiers/2015/19/1430735532-test-map-n-8-png.png
+
+EDIT des coordonnées pour la carte 10 : ( jet final sauf si tu veux y ajouter qque chose ) :
+http://image.noelshack.com/fichiers/2015/19/1430854152-test-map-n-10-jet-final-png.png
+
+nombre de tanks => 65
+nombre de bunkers => 37
+
+Je vais aussi t'ajouter dans la soirée la liste des zones interdites si 
+j'ai le temps de les finir ( du moins une partie ), en comprenant les 
+bords de la map, les murs et les tourelles ( pr pas passer à traver =x )
+Par contre faudra faire des test, la je me contenterais de faire des 
+limites d'un pixel pour la bordure, mais si ça fait tache j'en rajouterai plus...
+
+Aussi comment vais-je faire pour faire tenir deux éléments dans une liste ... 
+Une liste de tuple ? Jvais voir ça...
+
 POSITION	TANKS			
 N°		coord X	coord Y	sens
 1		30	710	Haut
@@ -54,6 +70,19 @@ N°		coord X	coord Y	sens
 50		145	80	Haut
 51		155	165	Gauche
 52		59	84	Haut
+53		974	420	Gauche
+54		928	358	Droite
+55		980	303	Gauche
+56		911	217	Haut
+57		960	167	Gauche
+58		804	129	Haut
+59		877	106	Bas
+60		937	3	Bas
+61		1004	83	Bas
+62		1059	100	Bas
+63		322	25	Gauche
+64		450	25	Gauche
+65		647	25	Gauche
 
 Position	 Bunkers			
 N°		coord X	coord Y	direction
@@ -87,4 +116,11 @@ N°		coord X	coord Y	direction
 28		508	61	Haut
 29		257	54	Bas
 30		61	23	Droite
+31		974	232	Gauche
+32		905	135	Gauche
+33		971	85	Gauche
+34		976	18	Gauche
+35		1085	123	Gauche
+36		1085	150	Gauche
+37		1085	181	Gauche
 
