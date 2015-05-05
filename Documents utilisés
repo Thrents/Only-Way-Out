@@ -1,0 +1,15 @@
+Voici les documents à utiliser dans le projet :
+
+La carte ( fond ) :
+http://image.noelshack.com/fichiers/2015/19/1430857118-map-finale-fond.png
+
+Le véhicule à poser aux coordonnées ( 56,688 ) au départ :
+http://image.noelshack.com/fichiers/2015/19/1430857208-test-vehicule-png.png
+
+Les obus utilisés : ( choisis celui de ton choix, je ne sais pas comment gerer l'angle avec pygame )
+horizontal => http://image.noelshack.com/fichiers/2015/19/1430857286-obus-png.png
+vertical => http://image.noelshack.com/fichiers/2015/19/1430857286-obus2-png.png
+
+Les coordonnées auquelles utiliser les obus sont celles des tourelles, qui sont déja données dans un autre post
+Il s'agit des coordonnées du centre de la tourelle, pour que l'obus ne soit pas tiré depuis l'exterieur de la tourelle.
+
