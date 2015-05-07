@@ -1,0 +1,6 @@
+voila une reformulation de ta fin de jeu plus concise.
+
+for h in position_fin_hauteur:
+        for l in position_fin longueur:
+          if jeep_position[0] == h and jeep_position[1] == l:
+            pygame.quit()
