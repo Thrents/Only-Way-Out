@@ -13,20 +13,87 @@ continuer = 0
   
   Le code complet pour les vérifications :
   
-if jeep_position[0] == 1 or jeep_position[0] == 2 or jeep_position[0] == 3 or jeep_position[0] == 4:
+if 0 <= X <= 10:
   * action choisie *
-elif jeep_position[1] == 7 or jeep_position[1] == 8 or jeep_position[1] == 9 or jeep_position[1] == 10:
+if 0 <= Y <= 5:
   * action choisie *
-elif jeep_position[0] == 1097 or jeep_position[0] == 1098 or jeep_position[0] == 1099 or jeep_position[0] == 1100:
+if 1097 <= X <= 1100:
   * action choisie *
-elif jeep_position[1] == 717 or jeep_position[1] == 718 or jeep_position[1] == 719 or jeep_position[1] == 720:
+if 715 <= Y <= 720:
   * action choisie *
   
   Le code pour finir le jeu est le suivant : 
-  if jeep_position[0] == 1050 or jeep_position[0] == 1051 or jeep_position[0] == 1052 or jeep_position[0] == 1053 or jeep_position[0] == 1054 or jeep_position[0] == 1055 or jeep_position[0] == 1056 or jeep_position[0] == 1057 or jeep_position[0] == 1058 or jeep_position[0] == 1059or jeep_position[0] == 1060:
-    if jeep_position[1] == 40 or jeep_position[1] == 41 or jeep_position[1] == 42 or jeep_position[1] == 43 or jeep_position[1] == 4 or jeep_position[1] == 45 or jeep_position[1] == 46 or jeep_position[1] == 47 or jeep_position[1] == 48 or jeep_position[1] == 49 or jeep_position[1] == 50
+  if 1050 <= X <= 1060:
+    if 40 <= Y <= 50:
       * lancer la fonction de victoire du jeu *
       
-      Ce code un peu compliqué ( fin nan, c'est juste des répétitions ) permet d'avoir un petit cercle de 10x10
+      Ce code permet d'avoir un petit cercle de 10x10
       comme zone de fin et non 1px, car c'est dur de tomber sur le bon =x
   
+Suite !
+
+Pour les zones interdites ( murs pour le coup )
+X = int(jeep_position[0])
+Y = int(jeep_position[1])
+
+if 31 <= X <= 73 and 256 <= Y <= 285:
+  * action choisie *
+  
+  if 85 <= X <= 127 and 78 <= Y <= 107:
+  * action choisie *
+  
+if 469 <= X <= 479 and 480 <= Y <= 720:
+  * action choisie *
+  
+if 269 <= X <= 479 and 480 <= Y <= 515:
+  * action choisie *
+  
+if 423 <= X <= 434 and 71 <= Y <= 121:
+  * action choisie *
+  
+if 487 <= X <= 529 and 131 <= Y <= 160:
+  * action choisie *
+  
+  if 692 <= X <= 734 and 139 <= Y <= 168:
+  * action choisie *
+  
+  if 924 <= X <= 935 and 143 <= Y <= 193:
+  * action choisie *
+  
+  if 857 <= X <= 868 and 28 <= Y <= 60:
+  * action choisie *
+  
+  if 911 <= X <= 922 and 28 <= Y <= 60:
+  * action choisie *
+  
+  if 857 <= X <= 922 and 0 <= Y <= 28:
+  * action choisie *
+  
+  if 924 <= X <= 935 and 143 <= Y <= 193:
+  * action choisie *
+  
+  Pour le long tunnel :
+  
+  if 558 <= X <= 705 and 600 <= Y <= 629:
+  * action choisie *
+  
+  if 558 <= X <= 656 and 649 <= Y <= 678:
+  * action choisie *
+  
+  if 694 <= X <= 705 and 630 <= Y <= 689:
+  * action choisie *
+  
+  if 645 <= X <= 656 and 679 <= Y <= 719:
+  * action choisie *
+  
+  if 657 <= X <= 1086 and 708 <= Y <= 719:
+  * action choisie *
+  
+  if 706 <= X <= 1041 and 660 <= Y <= 689:
+  * action choisie *
+  
+  if 1030 <= X <= 1041 and 193 <= Y <= 659:
+  * action choisie *
+  
+  if 1075 <= X <= 1086 and 201 <= Y <= 707:
+  * action choisie *
