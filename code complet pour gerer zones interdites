@@ -95,3 +95,4 @@ if 1075 <= X <= 1086 and 201 <= Y <= 707:
     
 # pour le trou d'eau
 if 162 <= X <= 179 and 641 <= Y <= 665
+    print(" erreur ! ")
