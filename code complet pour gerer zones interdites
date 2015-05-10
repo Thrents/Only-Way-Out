@@ -92,3 +92,6 @@ if 1030 <= X <= 1041 and 193 <= Y <= 659:
   
 if 1075 <= X <= 1086 and 201 <= Y <= 707:
     print(" erreur ! ")
+    
+# pour le trou d'eau
+if 162 <= X <= 179 and 641 <= Y <= 665
