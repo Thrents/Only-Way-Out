@@ -1,0 +1,94 @@
+Les premières lignes sont la pour faire la vérification sur spyder, histoire d'avoir un code correcte :
+
+Au total : 16 verifications ( plus ou moins, j'ai pu en rater un ) en If a <= X <= b and c <= Y <= d
+Ce code prend en compte la totalité des zones interdites de la map
+Le petit print(" Erreur " ) est la pour vérifier que le code fonctionne, il faudra le remplacer par la fonction fin de jeu.
+
+Aussi j'ai fait le test, la vérification de la derniere boucle if se fait instantannément : cette vérification ne fait pas lag le jeu.
+
+
+a = int(input(" Entrez la position X du vehicule : "))
+b = int(input(" Entrez la position Y du vehicule : "))
+
+jeep_position = [a,b]
+X = int(jeep_position[0])
+Y = int(jeep_position[1])
+
+if 0 <= X <= 10:
+    print(" erreur ! bord ")
+if 0 <= Y <= 5:
+    print(" erreur ! bord")
+if 1097 <= X <= 1100:
+    print(" erreur ! bord ")
+if 715 <= Y <= 720:
+    print(" erreur ! bord ")
+  
+if 1050 <= X <= 1060:
+    if 40 <= Y <= 50:
+        print(" Victoire ! ")
+
+
+if (31 <= X <= 73):
+    if (256 <= Y <= 285):
+        print(" erreur ! ")
+  
+if 85 <= X <= 127:
+    if 78 <= Y <= 107:
+        print(" erreur ! ")
+  
+if 469 <= X <= 479:
+    if 480 <= Y <= 720:
+        print(" erreur ! ")
+    
+if 269 <= X <= 479 and 480 <= Y <= 515:
+    print(" erreur ! ")
+  
+if 423 <= X <= 434 and 71 <= Y <= 121:
+    print(" erreur ! ")
+    
+if 487 <= X <= 529 and 131 <= Y <= 160:
+    print(" erreur ! ")
+  
+if 692 <= X <= 734 and 139 <= Y <= 168:
+    print(" erreur ! ")
+
+if 924 <= X <= 935 and 143 <= Y <= 193:
+    print(" erreur ! ")
+  
+if 857 <= X <= 868 and 28 <= Y <= 60:
+    print(" erreur ! ")
+  
+if 911 <= X <= 922 and 28 <= Y <= 60:
+    print(" erreur ! ")
+  
+if 857 <= X <= 922 and 0 <= Y <= 28:
+    print(" erreur ! ")
+  
+if 924 <= X <= 935 and 143 <= Y <= 193:
+    print(" erreur ! ")
+  
+# pour le tunel
+  
+if 558 <= X <= 705 and 600 <= Y <= 629:
+    print(" erreur ! ")
+  
+if 558 <= X <= 656 and 649 <= Y <= 678:
+    print(" erreur ! ")
+
+if 694 <= X <= 705 and 630 <= Y <= 689:
+    print(" erreur ! ")
+  
+if 645 <= X <= 656 and 679 <= Y <= 719:
+    print(" erreur ! ")
+  
+if 657 <= X <= 1086 and 708 <= Y <= 719:
+    print(" erreur ! ")
+  
+if 706 <= X <= 1041 and 660 <= Y <= 689:
+    print(" erreur ! ")
+  
+if 1030 <= X <= 1041 and 193 <= Y <= 659:
+    print(" erreur ! ")
+  
+if 1075 <= X <= 1086 and 201 <= Y <= 707:
+    print(" erreur ! ")
