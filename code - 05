@@ -3,14 +3,10 @@ import sys
 import math
 import random
 from pygame.locals import *
+pygame.init()
 background = pygame.image.load('image-jeux.png')
 jeep = pygame.image.load('jeep.png')
-obus_1 = pygame.image.load('obus_1.png')
-obus_2 = pygame.image.load('obus_2.png')
-obus_3 = pygame.image.load('obus_3.png')
-obus_4 = pygame.image.load('obus_4.png')
-image_de_fin = pygame.image.load('Game Over.jpg')
-victoire = pygame.image.load('victoire.jpg')
+
 jeep_position = [56,688]
 
 
@@ -18,13 +14,28 @@ def affichage_fenetre():
     """
     Fonction qui affiche une fenêtre avec une image de fond.
     """
-    pygame.init()
-    screen = pygame.display.set_mode((1100, 920))
-    pygame.display.set_caption(("Only Way Out"))
-    pygame.blit(background(0 ,0))
-    pygame.blit(jeep(jeep_position))
-    pygame.display.update()
+   
 
+    fenetre = pygame.display.set_mode((1100, 720))
+    pygame.display.set_caption("Only Way Out")
+    background = pygame.image.load('image-jeux.png').convert()
+    jeep = pygame.image.load('jeep.png').convert()
+
+    obus_1 = pygame.image.load('obus_1.png').convert()
+    obus_2 = pygame.image.load('obus_2.png').convert()
+    obus_3 = pygame.image.load('obus_3.png').convert()
+    obus_4 = pygame.image.load('obus_4.png').convert()
+
+    image_de_fin = pygame.image.load('Game Over.jpg')
+    victoire = pygame.image.load('victoire.jpg')
+
+    while True:
+        fenetre.blit(background, (0, 0))
+        background.blit(jeep, (145, 560))
+        pygame.display.flip()
+    jeep_position = [145, 560]
+
+    return jeep_position, background, obus_1, obus_2, obus_3, obus_4
 
 def moveup():
     background.move(0, 10)
@@ -92,7 +103,7 @@ def liste_tank_et_bunker():
     bunker_droit = [[26,609], [408,652], [826,638], [822,533], [50,495], [528,272], [830,198], [191,151], [662,89], [61,23]]
 
     return tank_bas, tank_haut, tank_gauche, tank_droite, bunker_haut, bunker_bas, bunker_gauche, bunker_droit
-def tir_bas():
+def tir_bas(obus_1,  tank_bas):
     """
     variation des positions des image obus pour les tirs.
     """
@@ -105,7 +116,7 @@ def tir_bas():
             if temps % 50 == 0:
                 obus_1_position.move(0, -30)
 
-def tir_haut():
+def tir_haut(obus_2,  tank_haut):
 
     while True:
         for tankh in tank_haut:
@@ -117,7 +128,7 @@ def tir_haut():
                 obus_2_position.move(0, 30)
 
 
-def tir_gauche():
+def tir_gauche(obus_3,  tank_gauche):
 
     while True:
         for tankg in tank_gauche:
@@ -129,7 +140,7 @@ def tir_gauche():
                 obus_3_position.move(-30, 0)
 
 
-def tir_droite():
+def tir_droite(obus_4,  tank_droite):
 
     while True:
         for tankd in tank_droite:
