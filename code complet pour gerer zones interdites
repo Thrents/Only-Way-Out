@@ -10,21 +10,23 @@ Aussi j'ai fait le test, la vérification de la derniere boucle if se fait insta
 a = int(input(" Entrez la position X du vehicule : "))
 b = int(input(" Entrez la position Y du vehicule : "))
 
+position base : 145/560
+fenetre => 300/300
+
 jeep_position = [a,b]
 X = int(jeep_position[0])
 Y = int(jeep_position[1])
 
-if 0 <= X <= 10:
+if X <= 10:
     print(" erreur ! bord ")
-if 0 <= Y <= 5:
+if Y <= 5:
     print(" erreur ! bord")
-if 1097 <= X <= 1100:
+if 1097 <= X:
     print(" erreur ! bord ")
-if 715 <= Y <= 720:
+if 715 <= Y:
     print(" erreur ! bord ")
   
-if 1050 <= X <= 1060:
-    if 40 <= Y <= 50:
+if 1050 <= X <= 1060 and 40 <= Y <= 50:
         print(" Victoire ! ")
 
 
