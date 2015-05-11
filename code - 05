@@ -140,7 +140,86 @@ def tir_droite():
             if temps % 500 == 0:
                 obus_4_position.move(0, 30)
             
-            
+def delimitation():
+if jeep_position[0] ==1 or jeep_position[0] == 2 or jeep_position[0] == 3 or jeep_position[0] == 4 or jeep_position[1] == 1 or jeep_position[1] == 2 or jeep_position[1] == 3 or jeep_position[1] == 4
+continuer = 0
+  pygame.quit()
+  
+if 0 <= X <= 10:
+  * action choisie *
+if 0 <= Y <= 5:
+  * action choisie *
+if 1097 <= X <= 1100:
+  * action choisie *
+if 715 <= Y <= 720:
+  * action choisie *
+  
+X = jeep_position[0]
+Y = jeep_position[1]
+
+if 31 <= X <= 73 and 256 <= Y <= 285:
+  * action choisie *
+  
+  if 85 <= X <= 127 and 78 <= Y <= 107:
+  * action choisie *
+  
+if 469 <= X <= 479 and 480 <= Y <= 720:
+  * action choisie *
+  
+if 269 <= X <= 479 and 480 <= Y <= 515:
+  * action choisie *
+  
+if 423 <= X <= 434 and 71 <= Y <= 121:
+  * action choisie *
+  
+if 487 <= X <= 529 and 131 <= Y <= 160:
+  * action choisie *
+  
+  if 692 <= X <= 734 and 139 <= Y <= 168:
+  * action choisie *
+  
+  if 924 <= X <= 935 and 143 <= Y <= 193:
+  * action choisie *
+  
+  if 857 <= X <= 868 and 28 <= Y <= 60:
+  * action choisie *
+  
+  if 911 <= X <= 922 and 28 <= Y <= 60:
+  * action choisie *
+  
+  if 857 <= X <= 922 and 0 <= Y <= 28:
+  * action choisie *
+  
+  if 924 <= X <= 935 and 143 <= Y <= 193:
+  * action choisie *
+  
+  #Pour le long tunnel 
+  
+  if 558 <= X <= 705 and 600 <= Y <= 629:
+  * action choisie *
+  
+  if 558 <= X <= 656 and 649 <= Y <= 678:
+  * action choisie *
+  
+  if 694 <= X <= 705 and 630 <= Y <= 689:
+  * action choisie *
+  
+  if 645 <= X <= 656 and 679 <= Y <= 719:
+  * action choisie *
+  
+  if 657 <= X <= 1086 and 708 <= Y <= 719:
+  * action choisie *
+  
+  if 706 <= X <= 1041 and 660 <= Y <= 689:
+  * action choisie *
+  
+  if 1030 <= X <= 1041 and 193 <= Y <= 659:
+  * action choisie *
+  
+  if 1075 <= X <= 1086 and 201 <= Y <= 707:
+  * action choisie *
+  
+  
 def fin_jeu():
     """
     fonction qui vérifie si le jeu doit se terminer.
