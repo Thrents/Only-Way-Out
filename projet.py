@@ -27,7 +27,7 @@ def affichage_fenetre():
         fenetre.blit(background, (0, 0))
         background.blit(jeep, (145, 560))
         pygame.display.flip() #On rafraichie la fenêtre.
-    jeep_position = [56, 688]
+    jeep_position = [145, 560]
 
     return jeep_position, background, obus_1, obus_2, obus_3, obus_4
 
@@ -130,11 +130,11 @@ def tir_bas(obus_1,  tank_bas):
     while True:
         for tankb in tank_bas:
             temps = pygame.time.get_ticks()
-            if temps % 2000 == 0:
+            if temps % 1000 == 0:
                 background.blit(obus_1, (tankb))
                 pygame.display.flip()
                 obus_1_position = tankb
-            if temps % 50 == 0:
+            if temps % 100 == 0:
                 obus_1_position[1] -= 30 
                 background.blit(obus_1, (obus_1_position))
                 pygame.display.flip()
@@ -144,11 +144,11 @@ def tir_haut(obus_2,  tank_haut):
     while True:
         for tankh in tank_haut:
             temps = pygame.time.get_ticks()
-            if temps % 2000 == 0:
+            if temps % 1000 == 0:
                 background.blit(obus_2, (tankh))
                 pygame.display.flip()
                 obus_2_position = tankh 
-            if temps % 50 == 0:
+            if temps % 100 == 0:
                 obus_2_position[1] += 30
                 background.blit(obus_1, (obus_1_position))
                 pygame.display.flip()
@@ -159,11 +159,11 @@ def tir_gauche(obus_3,  tank_gauche):
     while True:
         for tankg in tank_gauche:
             temps = pygame.time.get_ticks()
-            if temps % 2000 == 0:
+            if temps % 1000 == 0:
                 background.blit(obus_3, (tankg))
                 pygame.display.flip()
                 obus_3_position = tankg 
-            if temps % 50 == 0:
+            if temps % 100 == 0:
                 obus_3_position[0] -= 30
                 background.blit(obus_3, (obus_3_position))
                 pygame.display.flip()
@@ -174,11 +174,11 @@ def tir_droite(obus_4,  tank_droite):
     while True:
         for tankd in tank_droite:
             temps = pygame.time.get_ticks()
-            if temps % 2000 == 0:
+            if temps % 1000 == 0:
                 background.blit(obus_4, (tankd))
                 pygame.display.flip()
                 obus_4_position = tankd 
-            if temps % 50 == 0:
+            if temps % 100 == 0:
                 obus_4_position[0] += 30
                 background.blit(obus_4, (obus_4_position))
                 pygame.display.flip()
@@ -191,7 +191,7 @@ def tir_bunker_bas(obus_1,  bunker_bas):
                 background.blit(obus_1(bunkerb))
                 pygame.display.flip()
                 obus_bunker_1_position = bunkerb
-            if temps % 500 == 0:
+            if temps % 100 == 0:
                 obus_bunker_1_position[1] -= 50
                 background.blit(obus_1, (obus_2_position))
                 pygame.display.flip()
@@ -204,7 +204,7 @@ def tir_bunker_haut(obus_2,  bunker_haut):
                 background.blit(obus_2(bunkerh))
                 pygame.display.flip()
                 obus_bunker_2_position = bunkerh
-            if temps % 500 == 0:
+            if temps % 100 == 0:
                 obus_bunker_2_position[1] += 50
                 background.blit(obus_2, (obus_2_position))
                 pygame.display.flip()
@@ -218,7 +218,7 @@ def tir_bunker_gauche(obus_3,  bunker_gauche):
                 background.blit(obus_3(bunkerg))
                 pygame.display.flip()
                 obus_bunker_3_position = bunkerg
-            if temps % 500 == 0:
+            if temps % 100 == 0:
                 obus_bunker_3_position[0] -= 50
                 background.blit(obus_3, (obus_3_position))
                 pygame.display.flip()
@@ -231,134 +231,132 @@ def tir_bunker_droite(obus_4,  bunker_droit):
                 background.blit(obus_4(bunkerd))
                 pygame.display.flip()
                 obus_bunker_3_position = bunkerd
-            if temps % 500 == 0:
+            if temps % 100 == 0:
                 obus_bunker_4_position[0] += 50
                 background.blit(obus_4, (obus_4_position))
                 pygame.display.flip()
             
-
-  def delimitation():
-    """
-    Délimitation des zones interdites au joueur.
-    """
-    delimitation_1 = [1, 2, 3, 4]
-    for coordonnees in delimitation_1:
-        if jeep_position[0] == coordonnees and jeep_position[1] == coordonees:
-            continuer = 0
-            pygame.quit()
-  
-    if 0 <= X <= 10:
-       * action choisie *
-    if 0 <= Y <= 5:
-       * action choisie  
-    if 1097 <= X <= 1100:
-       * action choisie *
-    if 715 <= Y <= 720:
-       * action choisie *
-  
+            
+def delimitation():
     X = jeep_position[0]
     Y = jeep_position[1]
-
+    
+      # pour s'assurer que le véhicule ne sorte pas de l'image
+    if X <= 10:
+        pygame.blit(image_fin_noyade(0,0))
+             for event in pygame.event.get():
+                if event.type == KEYDOWN:
+                    if event.key == K_ESCAPE:
+                        pygame.quit()
+                        
+    if Y <= 5:
+        affichage_fin_mur()
+        
+    if 1097 <= X:
+        affichage_fin_mur()
+        
+    if 715 <= Y:
+        affichage_fin_mur()
+        
+        # zones interdites ( murs + le trou d'eau )
     if 31 <= X <= 73 and 256 <= Y <= 285:
-        * action choisie *
-  
+        affichage_fin_mur()
+      
     if 85 <= X <= 127 and 78 <= Y <= 107:
-        * action choisie *
-  
+        affichage_fin_mur()
+      
     if 469 <= X <= 479 and 480 <= Y <= 720:
-        * action choisie *
-
+        affichage_fin_mur()
+      
     if 269 <= X <= 479 and 480 <= Y <= 515:
-        * action choisie *
-  
+        affichage_fin_mur()
+      
     if 423 <= X <= 434 and 71 <= Y <= 121:
-        * action choisie *
-  
+        affichage_fin_mur()
+      
     if 487 <= X <= 529 and 131 <= Y <= 160:
-        * action choisie *
-  
+        affichage_fin_mur()
+      
     if 692 <= X <= 734 and 139 <= Y <= 168:
-        * action choisie *
-  
+        affichage_fin_mur()
+      
     if 924 <= X <= 935 and 143 <= Y <= 193:
-        * action choisie *
-  
+        affichage_fin_mur()
+      
     if 857 <= X <= 868 and 28 <= Y <= 60:
-        * action choisie *
-  
+        affichage_fin_mur()
+      
     if 911 <= X <= 922 and 28 <= Y <= 60:
-        * action choisie *
-  
+        affichage_fin_mur()
+      
     if 857 <= X <= 922 and 0 <= Y <= 28:
-        * action choisie *
-  
+        affichage_fin_mur()
+      
     if 924 <= X <= 935 and 143 <= Y <= 193:
-        * action choisie *
-  
-  #Pour le long tunnel 
-  
+        affichage_fin_mur()
+      
+      #Pour le long tunnel 
+      
     if 558 <= X <= 705 and 600 <= Y <= 629:
-        * action choisie *
-  
+        affichage_fin_mur()
+      
     if 558 <= X <= 656 and 649 <= Y <= 678:
-        * action choisie *
-  
+        affichage_fin_mur()
+      
     if 694 <= X <= 705 and 630 <= Y <= 689:
-        * action choisie *
-  
+        affichage_fin_mur()
+      
     if 645 <= X <= 656 and 679 <= Y <= 719:
-        * action choisie *
-  
+        affichage_fin_mur()
+      
     if 657 <= X <= 1086 and 708 <= Y <= 719:
-        * action choisie *
-  
+        affichage_fin_mur()
+      
     if 706 <= X <= 1041 and 660 <= Y <= 689:
-        * action choisie *
-  
+        affichage_fin_mur()
+      
     if 1030 <= X <= 1041 and 193 <= Y <= 659:
-        * action choisie *
-  
+        affichage_fin_mur()
+      
     if 1075 <= X <= 1086 and 201 <= Y <= 707:
-        * action choisie *
-
-
-  
+        affichage_fin_mur()
+        
+    if 162 <= X <= 179 and 641 <= Y <= 665
+        pygame.blit(image_fin_noyade(0,0))
+             for event in pygame.event.get():
+                if event.type == KEYDOWN:
+                    if event.key == K_ESCAPE:
+                        pygame.quit()
+      
 def fin_jeu():
     """
     fonction qui vérifie si le jeu doit se terminer.
     """
-    position_fin_hauteur = [1050 , 1051 , 1052 , 1053 , 1054 , 1055 , 1056 , 
-                            1057 , 1058 , 1059 , 1060]
-    position_fin_longueur = [40 , 41 , 42 , 43 , 44 , 45 , 46 , 47 , 48 , 
-                             49 , 50]    
-    
+   if 1050 <= X <= 1060 and 40 <= Y <= 50:
+        pygame.blit(victoire(0,0))
+         for event in pygame.event.get():
+            if event.type == KEYDOWN:
+                if event.key == K_ESCAPE:
+                    pygame.quit()    
     
     if obus_1_position == jeep_position:
-        pygame.blit(image_de_fin(0,0))
-        pygame.quit()
+        affichage_fin()
     
     elif obus_2_position == jeep_position:
-        pygame.blit(image_de_fin(0,0))
-        pygame.quit()
+        affichage_fin()
     
     elif obus_3_position == jeep_position:
-        pygame.blit(image_de_fin(0,0))
-        pygame.quit()
+        affichage_fin()
     
     elif obus_4_position == jeep_position:
-        pygame.blit(image_de_fin(0,0))
-        pygame.quit()
-
-
-    for h in position_fin_hauteur:
-        for l in position_fin_longueur:
-            if (jeep_position[0] == h) and (jeep_position[1] == l):
-                temps_victoire = pygame.time.get_ticks()
-                while temps_victoire % 2000 != 0: 
-                    pygame.blit(victoire(0,0))
-
-
-
+        affichage_fin()
+                    
+def affichage_fin_mur():
+    pygame.blit(image_fin_mur(0,0))
+         for event in pygame.event.get():
+            if event.type == KEYDOWN:
+                if event.key == K_ESCAPE:
+                    pygame.quit()
 def main():
     """
     Fonction principale du programme
