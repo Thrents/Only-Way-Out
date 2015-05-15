@@ -1,100 +1,121 @@
-Les premières lignes sont la pour faire la vérification sur spyder, histoire d'avoir un code correcte :
-
-Au total : 16 verifications ( plus ou moins, j'ai pu en rater un ) en If a <= X <= b and c <= Y <= d
-Ce code prend en compte la totalité des zones interdites de la map
-Le petit print(" Erreur " ) est la pour vérifier que le code fonctionne, il faudra le remplacer par la fonction fin de jeu.
-
-Aussi j'ai fait le test, la vérification de la derniere boucle if se fait instantannément : cette vérification ne fait pas lag le jeu.
-
-
-a = int(input(" Entrez la position X du vehicule : "))
-b = int(input(" Entrez la position Y du vehicule : "))
-
-position base : 145/560
-fenetre => 300/300
-
-jeep_position = [a,b]
-X = int(jeep_position[0])
-Y = int(jeep_position[1])
-
-if X <= 10:
-    print(" erreur ! bord ")
-if Y <= 5:
-    print(" erreur ! bord")
-if 1097 <= X:
-    print(" erreur ! bord ")
-if 715 <= Y:
-    print(" erreur ! bord ")
-  
-if 1050 <= X <= 1060 and 40 <= Y <= 50:
-        print(" Victoire ! ")
-
-
-if (31 <= X <= 73):
-    if (256 <= Y <= 285):
-        print(" erreur ! ")
-  
-if 85 <= X <= 127:
-    if 78 <= Y <= 107:
-        print(" erreur ! ")
-  
-if 469 <= X <= 479:
-    if 480 <= Y <= 720:
-        print(" erreur ! ")
+           
+def delimitation():
+    X = jeep_position[0]
+    Y = jeep_position[1]
+      # pour s'assurer que le véhicule ne sorte pas de l'image
     
-if 269 <= X <= 479 and 480 <= Y <= 515:
-    print(" erreur ! ")
-  
-if 423 <= X <= 434 and 71 <= Y <= 121:
-    print(" erreur ! ")
+    if X <= 10:
+        pygame.blit(image_fin_noyade(0,0))
+             for event in pygame.event.get():
+                if event.type == KEYDOWN:
+                    if event.key == K_ESCAPE:
+                        pygame.quit()
+                        
+    if Y <= 5:
+        affichage_fin_mur()
+        
+    if 1097 <= X:
+        affichage_fin_mur()
+        
+    if 715 <= Y:
+        affichage_fin_mur()
+        
+        # zones interdites ( murs + le trou d'eau )
+    if 31 <= X <= 73 and 256 <= Y <= 285:
+        affichage_fin_mur()
+      
+    if 85 <= X <= 127 and 78 <= Y <= 107:
+        affichage_fin_mur()
+      
+    if 469 <= X <= 479 and 480 <= Y <= 720:
+        affichage_fin_mur()
+      
+    if 269 <= X <= 479 and 480 <= Y <= 515:
+        affichage_fin_mur()
+      
+    if 423 <= X <= 434 and 71 <= Y <= 121:
+        affichage_fin_mur()
+      
+    if 487 <= X <= 529 and 131 <= Y <= 160:
+        affichage_fin_mur()
+      
+    if 692 <= X <= 734 and 139 <= Y <= 168:
+        affichage_fin_mur()
+      
+    if 924 <= X <= 935 and 143 <= Y <= 193:
+        affichage_fin_mur()
+      
+    if 857 <= X <= 868 and 28 <= Y <= 60:
+        affichage_fin_mur()
+      
+    if 911 <= X <= 922 and 28 <= Y <= 60:
+        affichage_fin_mur()
+      
+    if 857 <= X <= 922 and 0 <= Y <= 28:
+        affichage_fin_mur()
+      
+    if 924 <= X <= 935 and 143 <= Y <= 193:
+        affichage_fin_mur()
+      
+      #Pour le long tunnel 
+      
+    if 558 <= X <= 705 and 600 <= Y <= 629:
+        affichage_fin_mur()
+      
+    if 558 <= X <= 656 and 649 <= Y <= 678:
+        affichage_fin_mur()
+      
+    if 694 <= X <= 705 and 630 <= Y <= 689:
+        affichage_fin_mur()
+      
+    if 645 <= X <= 656 and 679 <= Y <= 719:
+        affichage_fin_mur()
+      
+    if 657 <= X <= 1086 and 708 <= Y <= 719:
+        affichage_fin_mur()
+      
+    if 706 <= X <= 1041 and 660 <= Y <= 689:
+        affichage_fin_mur()
+      
+    if 1030 <= X <= 1041 and 193 <= Y <= 659:
+        affichage_fin_mur()
+      
+    if 1075 <= X <= 1086 and 201 <= Y <= 707:
+        affichage_fin_mur()
+        
+    if 162 <= X <= 179 and 641 <= Y <= 665
+        pygame.blit(image_fin_noyade(0,0))
+             for event in pygame.event.get():
+                if event.type == KEYDOWN:
+                    if event.key == K_ESCAPE:
+                        pygame.quit()
+      
+def fin_jeu():
+    """
+    fonction qui vérifie si le jeu doit se terminer.
+    """
+   if 1050 <= X <= 1060 and 40 <= Y <= 50:
+        pygame.blit(victoire(0,0))
+         for event in pygame.event.get():
+            if event.type == KEYDOWN:
+                if event.key == K_ESCAPE:
+                    pygame.quit()    
     
-if 487 <= X <= 529 and 131 <= Y <= 160:
-    print(" erreur ! ")
-  
-if 692 <= X <= 734 and 139 <= Y <= 168:
-    print(" erreur ! ")
-
-if 924 <= X <= 935 and 143 <= Y <= 193:
-    print(" erreur ! ")
-  
-if 857 <= X <= 868 and 28 <= Y <= 60:
-    print(" erreur ! ")
-  
-if 911 <= X <= 922 and 28 <= Y <= 60:
-    print(" erreur ! ")
-  
-if 857 <= X <= 922 and 0 <= Y <= 28:
-    print(" erreur ! ")
-  
-if 924 <= X <= 935 and 143 <= Y <= 193:
-    print(" erreur ! ")
-  
-# pour le tunel
-  
-if 558 <= X <= 705 and 600 <= Y <= 629:
-    print(" erreur ! ")
-  
-if 558 <= X <= 656 and 649 <= Y <= 678:
-    print(" erreur ! ")
-
-if 694 <= X <= 705 and 630 <= Y <= 689:
-    print(" erreur ! ")
-  
-if 645 <= X <= 656 and 679 <= Y <= 719:
-    print(" erreur ! ")
-  
-if 657 <= X <= 1086 and 708 <= Y <= 719:
-    print(" erreur ! ")
-  
-if 706 <= X <= 1041 and 660 <= Y <= 689:
-    print(" erreur ! ")
-  
-if 1030 <= X <= 1041 and 193 <= Y <= 659:
-    print(" erreur ! ")
-  
-if 1075 <= X <= 1086 and 201 <= Y <= 707:
-    print(" erreur ! ")
+    if obus_1_position == jeep_position:
+        affichage_fin()
     
-# pour le trou d'eau
-if 162 <= X <= 179 and 641 <= Y <= 665
-    print(" erreur ! ")
+    elif obus_2_position == jeep_position:
+        affichage_fin()
+    
+    elif obus_3_position == jeep_position:
+        affichage_fin()
+    
+    elif obus_4_position == jeep_position:
+        affichage_fin()
+                    
+def affichage_fin_mur():
+    pygame.blit(image_fin_mur(0,0))
+         for event in pygame.event.get():
+            if event.type == KEYDOWN:
+                if event.key == K_ESCAPE:
+                    pygame.quit()
