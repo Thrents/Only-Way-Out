@@ -1,0 +1,91 @@
+import pygame
+import time
+from pygame.locals import *
+pygame.init()
+
+def affichage_fenetre():
+    """
+    Fonction qui affiche une fenêtre avec une image de fond.
+    """    
+    fenetre = pygame.display.set_mode((1200, 1000))
+    pygame.display.set_caption("Only Way Out")
+    background = pygame.image.load('image-jeux.png').convert()
+    jeep = pygame.image.load('jeep.png').convert()
+
+    obus_1 = pygame.image.load('obus_1.png').convert()
+    obus_2 = pygame.image.load('obus_2.png').convert()
+    obus_3 = pygame.image.load('obus_3.png').convert()
+    obus_4 = pygame.image.load('obus_4.png').convert()
+
+    image_fin_mur = pygame.image.load('fin_mur.png')
+    image_fin_eau = pygame.image.load('fin_noyade.png')
+    image_fin_projectile = pygame.image.load('fin_projectile.png')
+    victoire = pygame.image.load('victoire.png')
+
+
+    fenetre.blit(background, (0, 0))
+    fenetre.blit(jeep, (145, 560)
+    pygame.display.flip()  #On rafraichie la fenêtre.
+    jeep_position = [145, 560]
+
+    return jeep_position, fenetre, obus_1, obus_2, obus_3, obus_4, image_fin_mur, image_fin_eau, image_fin_projectile, victoire
+
+
+def moveup(jeep_position):
+    jeep_position[1] = 10
+    fenetre.blit(jeep(jeep_position))
+    pygame.display.flip()
+    return jeep_position
+
+
+def movedown(jeep_position):
+    jeep_position[1] -= 10
+    fenetre.blit(jeep(jeep_position))
+    pygame.display.flip()
+    return jeep_position
+
+
+def moveleft(jeep_position):
+    jeep_position[0] -= 10
+    fenetre.blit(jeep(jeep_position))
+    pygame.display.flip()
+    return jeep_position
+
+
+def moveright(jeep_position):
+    jeep_position[0] += 10
+    fenetre.blit(jeep(jeep_position))
+    pygame.display.flip()
+    return jeep_position
+
+
+def mouvement(jeep_position):
+    """
+    Fonction qui gère les déplacements du personnage.
+    """
+    continuer = 1
+
+    while continuer == 1:
+        for event in pygame.event.get():
+            if event.type == KEYDOWN:
+                if event.key == K_UP:
+                    moveup(jeep_position)
+                    pygame.display.flip()
+                if event.key == K_DOWN:
+                    movedown(jeep_position)
+                    pygame.display.flip()
+                if event.key == K_RIGHT:
+                    moveright(jeep_position)
+                    pygame.display.flip()
+                if event.key == K_LEFT:
+                    moveleft(jeep_position)
+                    pygame.display.flip()
+                if (evenement.key == K_ESCAPE):
+                    continuer = 0
+                    pygame.quit() # On quitte le programme.
+                    
+                pygame.display.update()
+    return continuer
+while True:
+    jeep_position, fenetre, obus_1, obus_2, obus_3, obus_4, image_fin_mur, image_fin_eau, image_fin_projectile, victoire = affichage_fenetre()
+    continuer = mouvement(jeep_position)
