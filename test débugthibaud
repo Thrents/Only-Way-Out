@@ -1,0 +1,103 @@
+import pygame
+from pygame.locals import *
+pygame.init()
+continuer = 0
+
+fenetre = pygame.display.set_mode((1100, 720))
+pygame.display.set_caption("Only Way Out")
+background = pygame.image.load('image-jeux.png').convert()
+jeep = pygame.image.load('jeep.png').convert()
+
+image_fin_mur = pygame.image.load('fin_mur.png').convert()
+image_fin_noyade = pygame.image.load('fin_noyade bonne taille.png').convert()
+image_fin_projectile = pygame.image.load('fin_projectile.png').convert()
+victoire = pygame.image.load('victoire.png').convert()
+money = pygame.image.load('money.jpg').convert()
+
+X = 560
+Y = 560
+    
+while continuer == 0:
+    fenetre.blit(background, (0, 0))
+    
+    X -= 30
+    Y += 0
+    
+    fenetre.blit(jeep, (X,Y))               
+    pygame.display.flip()  
+    
+
+    for event in pygame.event.get():
+        if event.type == KEYDOWN:
+            if event.key == K_ESCAPE:
+                continuer -= 1
+            if event.key == K_UP:            
+                X += 20
+                fenetre.blit(jeep, (X,Y))
+                pygame.display.flip()
+
+    
+
+    if 1050 <= X <= 1060 and 40 <= Y <= 50:
+        continuer = 4  
+    
+    if X <= 10:
+        continuer = 1
+
+    if 162 <= X <= 179 and 641 <= Y <= 665:
+        continuer = 1
+
+    pygame.time.Clock().tick(10)
+    boucle = pygame.time.get_ticks()
+
+
+
+
+if continuer == 1:
+    fenetre.blit(image_fin_noyade,(0,0))
+    pygame.display.flip()
+    continuer_eau = 1
+    while continuer_eau == 1:
+        for event in pygame.event.get():
+            if event.type == KEYDOWN:
+                if event.key == K_ESCAPE:
+                    pygame.quit()
+                if event.key == K_d:
+                    fenetre.blit(money,(0,0))
+                    pygame.display.flip()
+
+                    
+                
+if continuer == 2:
+    fenetre.blit(image_fin_projectile,(0,0))
+    continuer_proj = 1
+    while continuer_proj == 1:
+        for event in pygame.event.get():
+            if event.type == KEYDOWN:
+                if event.key == K_ESCAPE:
+                    pygame.quit()
+
+                    
+                
+if continuer == 3:
+    fenetre.blit(image_fin_mur,(0,0))
+    pygame.display.flip()
+    continuer_mur = 1
+    while continuer_mur == 1:
+        for event in pygame.event.get():
+            if event.type == KEYDOWN:
+                if event.key == K_ESCAPE:
+                    pygame.quit()
+
+                    
+
+if continuer == 4:
+    fenetre.blit(victoire,(0,0))
+    pygame.display.flip()
+    continuer_vict = 1
+    while continuer_vict == 1:
+        for event in pygame.event.get():
+            if event.type == KEYDOWN:
+                if event.key == K_ESCAPE:
+                    pygame.quit()
+                
