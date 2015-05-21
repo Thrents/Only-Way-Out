@@ -1,13 +1,10 @@
 import pygame
-import time
 from pygame.locals import *
 pygame.init()
 
 
 def affichage_fenetre():
-    """
-    Fonction qui affiche une fenêtre avec une image de fond.
-    """    
+
     fenetre = pygame.display.set_mode((1100, 720))
     pygame.display.set_caption("Only Way Out")
     background = pygame.image.load('image-jeux.png').convert()
@@ -23,8 +20,10 @@ def affichage_fenetre():
     image_fin_projectile = pygame.image.load('fin_projectile.png')
     victoire = pygame.image.load('victoire.png')
 
+
     X = 145
     Y = 560
+    
 
     return jeep, X, Y, fenetre, obus_1, obus_2, obus_3, obus_4, image_fin_mur, image_fin_eau, image_fin_projectile, victoire, background
     
@@ -45,89 +44,66 @@ def moveleft(jeep, X, fenetre):
 def moveright(jeep, X, fenetre):
     X += 10
     return X
-def tir_bas_tank(:
-    obus_position_bas_tank = [[108, 609], [321,611], [205,548], [118,412],
-                              [71,375], [531,341], [746,532], [335,78]]    
-    
-    for b in range (len(obus_position_bas_tank)):
-        copie_liste = list(obus_position_bas_tank) # Pour ne pas modifier la
-        copie_liste[b][0] += 5                   #liste de départ 
 
 
-def tir_haut_tank():
-    obus_position_haut_tank = [[30,710], [203,686], [205,528], [174,474],
+def tir_bas():
+    obus_position_bas = [[108, 609], [321,611], [205,548], [118,412],
+                              [71,375], [531,341], [746,532], [335,78],
+                              [497,503], [161,377], [245,378], 
+                              [893,380], [454,187], [88,126], [840,17], 
+                              [257,54]]    
+    copie_liste_bas = list(obus_position_bas)
+    for b in range (len(obus_position_bas)):
+        copie_liste_bas[b][1] += 5  
+        fenetre.blit(obus_1,(copie_liste_bas[b]))
+
+
+def tir_haut():
+    obus_position_haut = [[30,710], [203,686], [205,528], [174,474],
                                [232,475], [93,455], [90,266], [152,275], 
                                 [322,408], [447,441], [608,440], [666,412], 
                                 [734,473], [727,644], [894,613], [830,408],
                                 [707,344], [798,273], [669,271], [417,269], 
                                 [754,150], [561,146], [464,140], [262,186], 
-                                [145,80], [59,84]]
-    
-    for h in range (len(obus_position_haut_tank)):
-        copie_liste = list(obus_position_haut_tank)
-        copie_liste[h][0] += 5
+                                [145,80], [59,84], [266,705], [449,703], 
+                                [531,705], [779,422], [737,283], [382,305], 
+                                [208,280], [508,61]]
+    copie_liste_haut = list(obus_position_haut)
+    for h in range (len(obus_position_haut)):
+        copie_liste_haut[h][1] += 5
+        fenetre.blit(obus_2,(copie_liste_haut[h]))
 
 
-
-def tir_gauche_tank():
-    obus_position_gauche_tank = [[367,654], [320,439], [427,536], 
+def tir_gauche():
+    obus_position_gauche = [[367,654], [320,439], [427,536], 
                                 [596,585], [425,341], [952,562], [930,455], 
                                 [654,200], [415,150], [155,165], [974,420], 
                                 [980,303], [960,167], [322,25], [450,25],
-                                [647,25]]
-    for g in range (len(obus_position_gauche_tank)):
-        copie_liste = list(obus_position_gauche_tank)
-        copie_liste[g][0] += 5
+                                [647,25], [222,616], [717,536], [494,460],
+                                [572,412], [974,232], [905,135], [971,85], 
+                                [976,18], [1085,123], [1085,150], [1085,181]]
+    copie_liste_gauche = list(obus_position_gauche)
+    for g in range (len(obus_position_gauche)):
+        copie_liste_gauche[g][0] += 5
+        fenetre.blit(obus_3,(copie_liste_gauche[g]))
 
 
-def tir_droit_tank():
-    obus_position_droit_tank = [[23,654], [99,664], [253,310], [562,509],
+def tir_droit():
+    obus_position_droit = [[23,654], [99,664], [253,310], [562,509],
                                 [505,446], [832,343], [754,205],
-                                [345,206], [928,358]]
+                                [345,206], [928,358], [26,609], [408,652],
+                                [826,638], [822,533],
+                                [50,495], [528,272], [830,198], [191,151], 
+                                [662,89], [61,23]]
+    copie_liste_droit = list(obus_position_droit)
+    for d in range (len(obus_position_droit)):
+        copie_liste_droit[d][0] += 5
+        fenetre.blit(obus_4,(copie_liste_droit[d]))
 
-    for d in range (len(obus_position_droit_tank)):
-        copie_liste = list(obus_position_droit_tank)
-        copie_liste[d][0] += 5
-
-def tir_bas_bunker():
-    obus_position_bas_bunker = [[497,503], [161,377], [245,378], 
-                                [893,380], [454,187], [88,126], [840,17], 
-                                [257,54]]
-    for b1 in range (len(obus_position_bas_bunker)):
-        copie_liste = list(obus_position_bas_bunker)
-        copie_liste[b1][0] += 5
-
-
-def tir_haut_bunker():
-    obus_position_haut_bunker = [[266,705], [449,703], [531,705], [779,422], 
-                                 [737,283], [382,305], [208,280], [508,61]]
-    for h1 in range (len(obus_position_haut_bunker)):
-        copie_liste = list(obus_position_haut_bunker)
-        copie_liste[h1][0] += 5
-
-
-def tir_gauche_bunker():
-    obus_position_gauche_bunker = [[222,616], [717,536], [494,460], [572,412],
-                                   [974,232], [905,135], [971,85], [976,18], 
-                                   [1085,123], [1085,150], [1085,181]]
-    for g1 in (len(obus_position_gauche_bunker)):
-        copie_liste = list(obus_position_gauche_bunker)
-        copie_liste[g1][0] += 5
-
-
-def tir_droit_bunker():
-    obus_position_droit_bunker = [[26,609], [408,652], [826,638], [822,533],
-                                 [50,495], [528,272], [830,198], [191,151], 
-                                 [662,89], [61,23]]
-    for d1 in (len(obus_position_droit_bunker)):
-        copie_liste = list(obus_position_droit_bunker)
-        copie_liste[d1][0] += 5
 
 
 def mouvement(jeep, X, Y, fenetre, background):
-    """
-    Fonction qui gère les déplacements du personnage.
-    """
+
     while True:
         for event in pygame.event.get():
             if event.type == KEYDOWN:
@@ -141,16 +117,19 @@ def mouvement(jeep, X, Y, fenetre, background):
                     X = moveleft(jeep, X, fenetre)
                 if (event.key == pygame.K_ESCAPE):
                     pygame.quit() # On quitte le programme.
-                    
+
+
+        
         fenetre.blit(background,(0, 0))
         fenetre.blit(jeep, (X, Y))
         pygame.display.flip()
+        tir_bas()
+        tir_droit()
+        tir_gauche()
+        tir_haut()
+        pygame.display.flip()
 
 
-obus_position_bas = [[108, 609], [321,611], [205,548], [118,412], [71,375]]
 jeep, X, Y, fenetre, obus_1, obus_2, obus_3, obus_4, image_fin_mur, image_fin_eau, image_fin_projectile, victoire, background = affichage_fenetre()
 while True:
     mouvement(jeep,X, Y, fenetre, background)
-    for i in range (len(obus_position_bas)):
-        obus_position_bas[i][0] += 10
-    fenetre.blit(obus_1, (obus_position_bas[i]))
